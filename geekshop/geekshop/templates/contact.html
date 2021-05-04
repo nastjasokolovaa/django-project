@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}
+    <div class="hero">
+        {% include 'includes/inc_menu.html' %}
+        <h1>{{ heading }}</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/inc_cont_content.html' %}
+{% endblock %}
