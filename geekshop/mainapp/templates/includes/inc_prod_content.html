@@ -2,13 +2,21 @@
 
 <div class="details">
     <div class="links clearfix">
-        {% include 'includes/inc_products.html' %}
+            <ul class="links-menu">
+                {% for category in categories %}
+                    <li>
+                        <a href="#" class="active">
+                            <p>{{ category.name }}</p>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
     </div>
 
     <div class="details-products">
         <div class="details-slider">
             <div class="slider-product">
-                <img src="{% static 'img/slider1.jpg' %}">
+                <img src="{% static 'img/slider1.jpg' %}" alt="1">
             </div>
             <div class="slider-control">
                 <div class="block">
