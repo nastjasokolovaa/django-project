@@ -5,19 +5,12 @@ from mainapp.models import ProductCategory
 def products(request):
     categories = ProductCategory.objects.all()[:4]
 
-    # links = {'links': [
-    #     {'href': 'mainapp:index', 'name': 'все'},
-    #     {'href': 'mainapp:index', 'name': 'дом'},
-    #     {'href': 'mainapp:index', 'name': 'офис'},
-    #     {'href': 'mainapp:index', 'name': 'модерн'},
-    #     {'href': 'mainapp:index', 'name': 'классика'}
-    # ]}
-
-    links_menu = {'menu': [
+    links_menu = {'links': [
         {'href': 'index', 'name': 'главная'},
-        {'href': 'mainapp:index', 'name': 'продукты'},
+        {'href': 'mainapp:products', 'name': 'продукты'},
         {'href': 'contact', 'name': 'контакты'},
     ],
+        'auth': [{'href': 'auth:edit', 'name': 'пользователь'}],
         'categories': categories,
     }
 

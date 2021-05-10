@@ -1,0 +1,29 @@
+[
+  {
+      "category": "Дом",
+      "name": "Стул фамильный",
+      "image": "product_img/Снимок_экрана_2021-05-10_в_12.24.53.png",
+      "short_desc": "очень удобный стул",
+      "description": "",
+      "price": "2500.00",
+      "quantity": 3
+  },
+  {
+      "category": "Дом",
+      "name": "Стол письменный",
+      "image": "product_img/Снимок_экрана_2021-05-10_в_12.25.36.png",
+      "short_desc": "стол для работы",
+      "description": "",
+      "price": "15900.00",
+      "quantity": 50
+  },
+  {
+      "category": "Офис",
+      "name": "Настольная лампа",
+      "image": "product_img/Снимок_экрана_2021-05-10_в_12.28.02.png",
+      "short_desc": "Необычная лампа",
+      "description": "",
+      "price": "3000.00",
+      "quantity": 15
+  }
+]

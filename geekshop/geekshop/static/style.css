@@ -38,15 +38,15 @@ html, body {
 	float: left;
 }
 
-.menu {
+.menu .auth {
 	list-style-type: none;
 	margin-top: 67px;
 	float: right;
 }
-.menu li {
+.menu .auth li {
 	float: left;
 }
-.menu a {
+.menu .auth a {
 	color: #8c8c8c;
 	font-size: 14px;
 	font-weight: 700;
@@ -55,17 +55,17 @@ html, body {
 	text-decoration: none;
 	padding: 10px 13px;
 }
-.menu .active {
+.menu .auth .active {
 	color: #212121;
 	font-weight: 700;
 	border-bottom: 3px solid #212121;
 }
-.menu a:hover {
+.menu .auth a:hover {
 	color: #212121;
 	font-weight: 700;
 	border-bottom: 3px solid #212121;
 }
-.menu a:active {
+.menu .auth a:active {
 	color: #8c8c8c;
 	font-weight: 700;
 	border-bottom: 3px solid #212121;
@@ -80,14 +80,16 @@ html, body {
 	top: 63px;
 	left: 1176px;
 }
-.basket {
+
+.basket .basket_menu {
+
 	display: block;
 	width: 23px;
-	height: 23px;	
-	background-image: url(img/basket.png);
+	height: 23px;
 	position: absolute;
 	top: 63px;
 	left: 1210px;
+	background-image: url(img/arrow.png);
 }
 
 .clearfix:after {

@@ -7,9 +7,10 @@ def main(request):
 
     main_menu = {'links': [
         {'href': 'index', 'name': 'главная'},
-        {'href': 'mainapp:index', 'name': 'продукты'},
+        {'href': 'mainapp:products', 'name': 'продукты'},
         {'href': 'contact', 'name': 'контакты'},
     ],
+        'auth': [{'href': 'auth:edit', 'name': 'пользователь'}],
         'topic': 'тренды',
         'heading': 'удобные стулья',
         'products': products,
@@ -21,18 +22,21 @@ def main(request):
 def products(request):
     main_menu = {'links': [
         {'href': 'index', 'name': 'главная'},
-        {'href': 'mainapp:index', 'name': 'продукты'},
+        {'href': 'mainapp:products', 'name': 'продукты'},
         {'href': 'contact', 'name': 'контакты'},
-    ]}
+    ],
+        'auth': [{'href': 'auth:edit', 'name': 'пользователь'}],
+    }
     return render(request, 'products.html', context=main_menu)
 
 
 def contact(request):
     main_menu = {'links': [
         {'href': 'index', 'name': 'главная'},
-        {'href': 'mainapp:index', 'name': 'продукты'},
+        {'href': 'mainapp:products', 'name': 'продукты'},
         {'href': 'contact', 'name': 'контакты'},
     ],
+        'auth': [{'href': 'auth:edit', 'name': 'пользователь'}],
         'heading': 'наши контакты'
     }
     return render(request, 'contact.html', context=main_menu)
