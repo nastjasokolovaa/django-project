@@ -1,5 +1,3 @@
-{% load static %}
-
 <div class="header clearfix">
     <a href="{% url 'index' %}" class="logo"></a>
     <ul class="menu">
@@ -16,7 +14,10 @@
         {% for auth in auth %}
             {% if user.is_authenticated %}
                 <li>
-                    <a href="{% url auth.href %}">
+                    <a href="{% url auth.href %}"
+                       class="{% if request.resolver_match.url_name == auth.href %}
+                           active
+                              {% endif %}">
                         {{ auth.name }}
                     </a>
                 </li>
@@ -31,5 +32,7 @@
         </li>
     </ul>
     <a href="#" class="search"></a>
-    <a href="#" class="basket"></a>
+    <a href="{% url 'basket:basket' %}" class="basket">корзина
+{#        {% if basket.quantity != 0 %} {{ basket|length }} {% endif %}#}
+    </a>
 </div>
