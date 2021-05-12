@@ -2,7 +2,6 @@
     <a href="{% url 'index' %}" class="logo"></a>
     <ul class="menu">
         {% for link in links %}
-
             <li>
                 <a href="{% url link.href %}"
                    class="{% if request.resolver_match.url_name == link.href %}
@@ -10,7 +9,6 @@
                           {% endif %}">
                     {{ link.name }}
                 </a>
-
             </li>
         {% endfor %}
         {% for auth in auth %}
@@ -34,5 +32,5 @@
         </li>
     </ul>
     <a href="#" class="search"></a>
-    <a href="#" class="basket"></a>
+    <a href="{% url 'basket:basket' %}" class="basket">корзина</a>
 </div>

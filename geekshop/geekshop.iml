@@ -28,6 +28,7 @@
         <option value="$MODULE_DIR$/geekshop/templates" />
         <option value="$MODULE_DIR$/mainapp/templates" />
         <option value="$MODULE_DIR$/authapp/templates" />
+        <option value="$MODULE_DIR$/basketapp/templates" />
       </list>
     </option>
   </component>

@@ -14,17 +14,19 @@ html, body {
 
 .clr {
 	height: 384px;
+	width: 100vw;
 }
 
 .container {
-	width: 1366px;
+	/*width: 1366px;*/
 	margin: 0 auto;
 	min-height: 100%;
+	width: 100vw;
 }
 
 .slider {
 	height: 800px;
-	background-image: url(img/slider.jpg); 
+	background-image: url(img/slider.jpg);
 	padding-left: 98px;
 	padding-right: 211px;
 	position: relative;
@@ -38,15 +40,15 @@ html, body {
 	float: left;
 }
 
-.menu .auth {
+.menu {
 	list-style-type: none;
 	margin-top: 67px;
 	float: right;
 }
-.menu .auth li {
+.menu li {
 	float: left;
 }
-.menu .auth a {
+.menu a {
 	color: #8c8c8c;
 	font-size: 14px;
 	font-weight: 700;
@@ -55,17 +57,17 @@ html, body {
 	text-decoration: none;
 	padding: 10px 13px;
 }
-.menu .auth .active {
+.menu .active {
 	color: #212121;
 	font-weight: 700;
 	border-bottom: 3px solid #212121;
 }
-.menu .auth a:hover {
+.menu a:hover {
 	color: #212121;
 	font-weight: 700;
 	border-bottom: 3px solid #212121;
 }
-.menu .auth a:active {
+.menu a:active {
 	color: #8c8c8c;
 	font-weight: 700;
 	border-bottom: 3px solid #212121;
@@ -74,22 +76,31 @@ html, body {
 .search {
 	display: block;
 	width: 23px;
-	height: 23px;	
+	height: 23px;
 	background-image: url(img/search.png);
 	position: absolute;
 	top: 63px;
 	left: 1176px;
 }
 
-.basket .basket_menu {
-
+.basket {
 	display: block;
-	width: 23px;
-	height: 23px;
 	position: absolute;
 	top: 63px;
-	left: 1210px;
-	background-image: url(img/arrow.png);
+	left: 1215px;
+	padding: 4px 4px;
+	font-size: 14px;
+	text-align: right;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #8c8c8c;
+	font-weight: 700;
+}
+
+.basket:hover {
+	color: #212121;
+	font-weight: 700;
+	border-bottom: 3px solid #212121;
 }
 
 .clearfix:after {
@@ -124,7 +135,7 @@ html, body {
 	font-size: 17px;
 	font-weight: 700;
 	line-height: 45px;
-	margin-top: 32px; 
+	margin-top: 32px;
 	letter-spacing: 3px;
 }
 .button-order:hover {
@@ -268,16 +279,22 @@ html, body {
 	width: 270px;
 	position: relative;
 }
+.block a img {
+	width: 100%;
+}
+.block .text img {
+	width: 40%;
+}
 .tab-content a .text {
 	display: none;
 	height: 268px;
 	width: 268px;
 	background-color: #ffffff;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    text-align: center;
-    border: 1px solid #9c9c9c;
+	opacity: 0.9;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	border: 1px solid #9c9c9c;
 }
 .tab-content a .text h4 {
 	color:  #212121;
@@ -366,7 +383,7 @@ html, body {
 
 .trending-products {
 	margin-top: 53px;
-	
+
 }
 .trending-products .block a img {
 	float: left;
@@ -384,11 +401,11 @@ html, body {
 	height: 368px;
 	width: 368px;
 	background-color: #ffffff;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    text-align: center;
-    border: 1px solid #9c9c9c;
+	opacity: 0.9;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	border: 1px solid #9c9c9c;
 }
 .trending-products a .text h4 {
 	color:  #212121;
@@ -443,7 +460,7 @@ html, body {
 }
 .exclusive-big {
 	height: 570px;
-	width: 570px;	
+	width: 570px;
 	float: left;
 	background-image: url(img/product-1-lg.jpg);
 }
@@ -453,27 +470,27 @@ html, body {
 	float: right;
 }
 .exclusive-small .block {
-		height: 270px;
-		width: 270px;
-		position: relative;
-		float: left;
+	height: 270px;
+	width: 270px;
+	position: relative;
+	float: left;
 }
 .exclusive-small .block:nth-child(odd) {
-		margin-right: 30px;
+	margin-right: 30px;
 }
 .exclusive-small .block:first-child, .exclusive-small .block:nth-child(2) {
-		margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 .exclusive-small a .text {
 	display: none;
 	height: 268px;
 	width: 268px;
 	background-color: #ffffff;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    text-align: center;
-    border: 1px solid #9c9c9c;
+	opacity: 0.9;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	border: 1px solid #9c9c9c;
 }
 .exclusive-small a .text h4 {
 	color:  #212121;
@@ -562,8 +579,8 @@ html, body {
 	position: absolute;
 	z-index: 2;
 	top: 10px;
-    right: 50px;
-    color: #6c6c6c;
+	right: 50px;
+	color: #6c6c6c;
 }
 .text-footer {
 	margin-top: 120px;
@@ -575,7 +592,7 @@ html, body {
 	margin-right: 0;
 }
 .text-footer h3 {
-	text-transform: uppercase; 
+	text-transform: uppercase;
 	color:  #6c6c6c;
 	font-size: 18px;
 	font-weight: 700;
@@ -698,6 +715,7 @@ td:first-child {
 
 .hero {
 	background-color: #f5f5f5;
+	height: 360px;
 	padding-left: 98px;
 	padding-right: 211px;
 	position: relative;
@@ -763,8 +781,8 @@ td:first-child {
 .tab-control li {
 	float: left;
 	border-bottom: 1px solid #6c6c6c;
-	padding-bottom: 19px;	
-} 
+	padding-bottom: 19px;
+}
 .tab-control a {
 	color: #6c6c6c;
 	font-size: 18px;
@@ -811,11 +829,11 @@ td:first-child {
 	height: 368px;
 	width: 368px;
 	background-color: #ffffff;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    text-align: center;
-    border: 1px solid #9c9c9c;
+	opacity: 0.9;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	border: 1px solid #9c9c9c;
 }
 .products a .text h4 {
 	color:  #212121;
@@ -859,9 +877,11 @@ td:first-child {
 	padding-left: 360px;
 }
 .links-menu {
-	margin:	27px auto 0px;	
+	margin:	27px auto 0px;
 	position: absolute;
 }
+
+
 .links-menu li {
 	float: left;
 	list-style-type: none;
@@ -874,27 +894,31 @@ td:first-child {
 	font-weight: 700;
 	text-transform: uppercase;
 }
+
 .links-menu .active {
 	color:  #212121;
 	font-size: 18px;
 	font-weight: 700;
+	border-bottom: 3px solid #212121;
 }
-.links-menu li a:hover {
+.links-menu a:hover {
 	color:  #212121;
 	font-size: 18px;
 	font-weight: 700;
+	border-bottom: 3px solid #212121;
 }
-.links-menu li a:active {
+.links-menu a:active {
 	color:  #6c6c6c;
 	font-size: 18px;
 	font-weight: 700;
+	border-bottom: 3px solid #212121;
 }
 
 .details-products {
 	padding-left: 98px;
 	padding-right: 98px;
 	margin-top: 98px;
-	height: 651px; 
+	height: 651px;
 }
 .details-slider {
 	width: 570px;
@@ -923,9 +947,9 @@ td:first-child {
 	height: 70px;
 	width: 70px;
 	background-color: #fff;
-    opacity: 0.7;
-    position: absolute;
-    top: 0;    
+	opacity: 0.7;
+	position: absolute;
+	top: 0;
 }
 .slider-control a:hover .text {
 	display: block;
@@ -1044,11 +1068,11 @@ td:first-child {
 	height: 368px;
 	width: 368px;
 	background-color: #ffffff;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    text-align: center;
-    border: 1px solid #9c9c9c;
+	opacity: 0.9;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	border: 1px solid #9c9c9c;
 }
 .related-products a .text h4 {
 	color:  #212121;
