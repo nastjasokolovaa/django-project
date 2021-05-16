@@ -273,6 +273,7 @@ html, body {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 120px;
+	flex-wrap: wrap;
 }
 .tab-content .block {
 	height: 270px;
@@ -929,6 +930,11 @@ td:first-child {
 	width: 570px;
 	height: 570px;
 }
+
+.hot_product{
+	height: 100%;
+}
+
 .slider-control {
 	width: 420px;
 	height: 70px;
