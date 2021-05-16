@@ -3,7 +3,7 @@
 
 {% block header %}
     <div class="hero-white">
-        {% include 'includes/inc_main_menu.html' %}
+        {% include 'includes/inc__menu.html' %}
     </div>
 {% endblock %}
 {% block content %}
@@ -13,7 +13,7 @@
         <div class="tab-content">
             {% for product in products %}
                 <div class="block">
-                    <a href="{% url 'basket:basket_add' product.pk %}">
+                    <a href="{% url 'products:product' product.pk %}">
                         <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
                         <div class="text">
                             <img src="{% static 'img/icon-hover.png' %}" alt="hover">
