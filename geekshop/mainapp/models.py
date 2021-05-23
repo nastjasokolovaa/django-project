@@ -21,6 +21,11 @@ class ProductCategory(models.Model):
     def __str__(self):
         return f'{self.name} {self.id} - {self.created_at}'
 
+    is_active = models.BooleanField(
+        verbose_name='активна',
+        default=True
+    )
+
 
 class Product(models.Model):
     category = models.ForeignKey(

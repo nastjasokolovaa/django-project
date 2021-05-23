@@ -11,20 +11,20 @@
     </title>
 
     {% block css %}
-        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style-gs.css' %}">
         <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
     {% endblock %}
     {% block js %}
     {% endblock %}
 </head>
 <body>
-<div class="container">
-    {% block header %}
-    {% endblock %}
-    {% block content %}
-    {% endblock %}
-</div>
-<div class="clr"></div>
-{% include 'includes/inc_footer.html' %}
+    <div class="container">
+        {% block header %}
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="clr"></div>
+    {% include 'includes/inc_footer.html' %}
 </body>
 </html>
