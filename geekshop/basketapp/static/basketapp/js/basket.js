@@ -13,17 +13,3 @@ $(document).ready(() => {
         event.preventDefault()
     })
 })
-
-// $(document).ready(() => {
-//     $('.hero-white').on('click', 'input[type="number"]', () => {
-//         const quantityEl = event.target
-//         $.ajax({
-//             url: `/basket/edit/${quantityEl.name}/${quantityEl.value}/`,
-//             success: function (data) {
-//                 console.log(data)
-//                 $('.hero-white').html(data)
-//             },
-//         })
-//         event.preventDefault()
-//     })
-// })

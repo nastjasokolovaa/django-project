@@ -2205,8 +2205,10 @@
 .fa-address-card-o:before {
   content: "\f2bc";
 }
-.fa-user-circle:before {
-  content: "\f2bd";
+.fa-user-circle, .icon {
+  /*content: "\f2bd";*/
+  height: 50px;
+  width: 20em;
 }
 .fa-user-circle-o:before {
   content: "\f2be";
