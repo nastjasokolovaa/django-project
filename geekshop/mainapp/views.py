@@ -1,6 +1,7 @@
 import random
 
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 
@@ -38,7 +39,7 @@ def get_links():
     return links_
 
 
-def products(request, pk=None):
+def products(request, pk=None, page=1):
     title = 'продукты'
     basket = get_basket(request.user)
     categories = ProductCategory.objects.all()
@@ -54,14 +55,24 @@ def products(request, pk=None):
     if pk is not None:
         if pk == 0:
             products = get_products().all().order_by('price')
-            category = {'name': 'все'}
+            category = {'name': 'все', 'pk': '0'}
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
             products = get_products().filter(category_id__pk=pk).order_by('price')
+
+        paginator = Paginator(products, 2)
+
+        try:
+            products_paginator = paginator.page(page)
+        except PageNotAnInteger:
+            products_paginator = paginator.page(1)
+        except EmptyPage:
+            products_paginator = paginator.page(1)
+
         links_menu.update(
             {
                 'category': category,
-                'products': products,
+                'products': products_paginator,
             }
         )
         return render(request, 'products_list.html', context=links_menu)
