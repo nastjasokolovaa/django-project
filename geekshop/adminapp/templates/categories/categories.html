@@ -73,6 +73,11 @@
             </table>
             <div class="card-footer">
                 <button class="btn btn-success">
+                    <a class="text-white" href={% url 'adminapp:products' 0 %}>
+                        смотреть все
+                    </a>
+                </button>
+                <button class="btn btn-success">
                     <a class="text-white" href={% url 'adminapp:category_create' %}>
                         новая категория
                     </a>
