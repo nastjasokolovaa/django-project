@@ -22,6 +22,7 @@
                                 <th>Персонал сайта</th>
                                 <th>Активный</th>
                                 <th>Вход</th>
+                                <th>Редактировать</th>
                                 <th>Удалить</th>
                             </tr>
                             </thead>
@@ -34,6 +35,7 @@
                                 <th>Персонал сайта</th>
                                 <th>Активный</th>
                                 <th>Вход</th>
+                                <th>Редактировать</th>
                                 <th>Удалить</th>
                             </tr>
                             </tfoot>
@@ -62,6 +64,13 @@
                                         {% endif %}
                                     </td>
                                     <td>{{ user.last_login }}</td>
+                                    <td>
+                                        <button class="btn btn-warning">
+                                            <a class="text-dark" href={% url 'adminapp:user_update' pk=user.id %}>
+                                                редактировать
+                                            </a>
+                                        </button>
+                                    </td>
                                     <td>
                                         <a {% if not user.is_active %} class="invisible"
                                             {% endif %} href="{% url 'adminapp:user_delete' pk=user.id %}">

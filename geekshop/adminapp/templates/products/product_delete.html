@@ -1,12 +1,11 @@
 {% extends 'admin_base.html' %}
 {% load static %}
 
-
 {% block content %}
     <div class="user_delete">
-        Уверены, что хотите удалить {{ product_to_delete.name }}
+        Уверены, что хотите удалить {{ object.name }}
         ?
-        <form action="{% url 'adminapp:product_delete' product_to_delete.pk %}"
+        <form action="{% url 'adminapp:product_delete' object.pk %}"
               method="post">
             {% csrf_token %}
             <div>
@@ -18,7 +17,7 @@
         <br>
         <div>
             <button class="btn btn-success">
-                <a href="{% url 'adminapp:products' product_to_delete.category.pk %}" class="text-white">
+                <a href="{% url 'adminapp:products' object.category.pk %}" class="text-white">
                     Отмена
                 </a>
             </button>

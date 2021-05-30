@@ -64,3 +64,8 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.category}'
+
+    is_active = models.BooleanField(
+        verbose_name='активна',
+        default=True
+    )
