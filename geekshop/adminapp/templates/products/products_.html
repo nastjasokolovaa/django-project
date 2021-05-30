@@ -42,7 +42,7 @@
                         </tfoot>
                         <tbody>
                         {% for object in objects %}
-                            <tr>
+                            <tr {% if not object.is_active %} style="opacity: 0.5;" {% endif %}>
                                 <td>
                                     <img src="/media/{{ object.image|default:'products_images/default.jpg' }}"
                                      alt="{{ object.name }}" style="width:50px;">
@@ -82,26 +82,28 @@
                     </table>
                     <div class="card-footer">
                         <button class="btn btn-success">
-                            <a class="text-white" href={% url 'adminapp:product_create' category.pk %}>
+                            <a class="text-white" href="{% url 'adminapp:product_create' category.pk %}">
                                 новый продукт
                             </a>
                         </button>
                     </div>
-                    <div class="paginator">
-                        {% if objects.has_previous %}
-                            <a href="{% url 'adminapp:page' category.pk objects.previous_page_number %}">
-                                <
-                            </a>
-                        {% endif %}
-                        <span class="current">
-                            Страница {{ objects.number }} из {{ objects.paginator.num_pages }}
-                        </span>
-                        {% if objects.has_next %}
-                            <a href="{% url 'adminapp:page' category.pk objects.next_page_number %}">
-                                >
-                            </a>
-                        {% endif %}
-                    </div>
+                    {% if is_paginated %}
+                        <div class="paginator">
+                            {% if objects.has_previous %}
+                                <a href="?page={{ objects.previous_page_number }}">
+                                    <
+                                </a>
+                            {% endif %}
+                            <span class="current">
+                                Страница {{ objects.number }} из {{ objects.paginator.num_pages }}
+                            </span>
+                            {% if objects.has_next %}
+                                <a href="?page={{ objects.next_page_number }}">
+                                    >
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

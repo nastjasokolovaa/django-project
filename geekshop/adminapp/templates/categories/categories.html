@@ -7,7 +7,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fa fa-table mr-1"></i>
-                <a href="{% url 'admin_staff:categories' %}">Категории</a>
+                <a href="{% url 'adminapp:categories' %}">Категории</a>
             </div>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -31,8 +31,8 @@
                 </tr>
                 </tfoot>
                 <tbody>
-                    {% for category in categories %}
-                        <tr>
+                    {% for category in object_list %}
+                        <tr {% if not category.is_active %} style="opacity: 0.5;" {% endif %}>
                             <td>
                                 {{ category.name|title }}
                             </td>
