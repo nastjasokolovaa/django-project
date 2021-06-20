@@ -13,13 +13,6 @@ def get_products():
     return Product.objects
 
 
-def get_basket(user):
-    if user.is_authenticated:
-        return Basket.objects.filter(user=user)
-    else:
-        return ''
-
-
 def get_hot_product():
     products = get_products().all()
 
@@ -41,7 +34,6 @@ def get_links():
 
 def products(request, pk=None, page=1):
     title = 'продукты'
-    basket = get_basket(request.user)
     categories = ProductCategory.objects.all()
     hot_product = get_hot_product()
     same_products = get_same_products(hot_product)
@@ -50,7 +42,6 @@ def products(request, pk=None, page=1):
         'auth': [{'href': 'auth:edit', 'name': 'пользователь'}],
         'categories': categories,
         'title': title,
-        'basket': basket,
     }
     if pk is not None:
         if pk == 0:
@@ -90,7 +81,6 @@ def products(request, pk=None, page=1):
 def product(request, pk):
     title = 'Страница продукта'
     categories = ProductCategory.objects.all()
-    basket = get_basket(request.user)
     pk_product = get_object_or_404(Product, pk=pk)
     same_products = get_same_products(pk_product)
     links_menu = {
@@ -98,7 +88,6 @@ def product(request, pk):
         'auth': [{'href': 'auth:edit', 'name': 'пользователь'}],
         'categories': categories,
         'title': title,
-        'basket': basket,
         'pk_product': pk_product,
         'same_products': same_products,
     }
