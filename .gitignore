@@ -2,5 +2,6 @@ venv
 .idea
 vcs.xml
 __pycache__/
-
+.env
+vk.json
 
