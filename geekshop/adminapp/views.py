@@ -133,6 +133,7 @@ class ProductCategoryUpdateView(UpdateView):
     model = ProductCategory
     template_name = 'categories/category_create_update.html'
     fields = '__all__'
+    success_url = reverse_lazy('adminapp:categories')
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
@@ -239,6 +240,7 @@ class ProductUpdateView(UpdateView):
     model = Product
     template_name = 'products/product_create_update.html'
     fields = '__all__'
+    success_url = reverse_lazy('adminapp:categories')
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, *args, **kwargs):
