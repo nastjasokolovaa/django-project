@@ -7,6 +7,7 @@ from django.dispatch import receiver
 from django.utils.timezone import now
 
 
+
 class ShopUser(AbstractUser):
     avatar = models.ImageField(
         upload_to='user_avatars',
@@ -16,6 +17,7 @@ class ShopUser(AbstractUser):
         verbose_name='возраст',
         default=18
     )
+
     REQUIRED_FIELDS = AbstractUser.REQUIRED_FIELDS + ['age']
     activation_key = models.CharField(
         max_length=128,
