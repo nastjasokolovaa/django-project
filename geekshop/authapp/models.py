@@ -7,7 +7,6 @@ from django.dispatch import receiver
 from django.utils.timezone import now
 
 
-
 class ShopUser(AbstractUser):
     avatar = models.ImageField(
         upload_to='user_avatars',

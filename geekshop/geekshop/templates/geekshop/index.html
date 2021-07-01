@@ -1,8 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'geekshop/base.html' %}
 {% load static %}
 {% block header %}
     <div class="slider">
-        {% include 'includes/inc__menu.html' %}
+        {% include 'geekshop/includes/inc__menu.html' %}
         <div class="text-slider">
             <h3 class="green">{{ topic }} {% now "Y" %}</h3>
             <h3 class="big">{{ heading }}</h3>
@@ -15,5 +15,5 @@
     </div>
 {% endblock %}
 {% block content %}
-    {% include 'includes/inc_idx_content.html' %}
+    {% include 'geekshop/includes/inc_idx_content.html' %}
 {% endblock %}

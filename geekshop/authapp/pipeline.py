@@ -9,7 +9,7 @@ def save_user_profile(backend, user, response, *args, **kwargs):
     if backend.name != 'vk-oauth2':
         return
 
-    api_url = f"http://api.vk.com/method/users.get?fields=bdate,sex,about,photo_50&v=5.92&access_token={response['access_token']}"
+    api_url = f"http://api.vk.com/method/users.get?fields=bdate,sex,about,photo_max_orig&v=5.92&access_token={response['access_token']}"
 
     vk_response = requests.get(api_url)
 
@@ -34,5 +34,13 @@ def save_user_profile(backend, user, response, *args, **kwargs):
             user.delete()
             raise AuthForbidden('social_core.backends.vk.VKOAuth2')
         user.age = age
+
+    if vk_data['photo_max_orig']:
+        photo_link = vk_data['photo_max_orig']
+        photo_response = requests.get(photo_link)
+        user_photo_path = f'user_avatars/{user.pk}.jpg'
+        with open(f'media/{user_photo_path}', 'wb') as photo_file:
+            photo_file.write(photo_response.content)
+        user.avatar = user_photo_path
 
     user.save()
