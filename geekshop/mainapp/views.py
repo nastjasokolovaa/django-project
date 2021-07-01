@@ -1,11 +1,9 @@
 import random
-
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-
-from basketapp.models import Basket
+from mainapp.context_processors import get_links, get_links_menu
 from mainapp.models import ProductCategory, Product
 
 
@@ -15,34 +13,19 @@ def get_products():
 
 def get_hot_product():
     products = get_products().all()
-
     return random.sample(list(products), 1)[0]
 
 
 def get_same_products(hot_products):
     same_products = get_products().filter(category=hot_products.category).exclude(pk=hot_products.pk)[:3]
-
     return same_products
-
-
-def get_links():
-    links_ = [{'href': 'index', 'name': 'главная'},
-              {'href': 'mainapp:products', 'name': 'продукты'},
-              {'href': 'contact', 'name': 'контакты'}]
-    return links_
 
 
 def products(request, pk=None, page=1):
     title = 'продукты'
-    categories = ProductCategory.objects.all()
     hot_product = get_hot_product()
     same_products = get_same_products(hot_product)
-    links_menu = {
-        'links': list(get_links()),
-        'auth': [{'href': 'auth:edit', 'name': 'пользователь'}],
-        'categories': categories,
-        'title': title,
-    }
+    links_menu = get_links_menu(request=request, title=title)
     if pk is not None:
         if pk == 0:
             products = get_products().all().order_by('price')

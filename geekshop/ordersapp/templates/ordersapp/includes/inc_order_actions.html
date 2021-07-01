@@ -1,0 +1,12 @@
+<div class="order-btn">
+    {% if object.status == 'FM' %}
+            <a class="button-order" href="{% url 'ordersapp:forming_complete' object.pk %}">
+                совершить покупку
+            </a>
+            <a class="button-order" href="{% url 'ordersapp:delete' object.pk %}">удалить</a>
+    {% endif %}
+        <a class="button-order" href="{% url 'ordersapp:list' %}">
+            к заказам
+        </a>
+        <a class="button-order" href="{% url 'index' %}">на главную</a>
+</div>

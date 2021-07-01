@@ -32,6 +32,7 @@
 
         {% endif %}
         <li>
+            <a href="{% url 'order:list' %}">заказы</a>
             {% if user.is_authenticated %}
                 <a href="{% url 'auth:logout' %}">выйти</a>
             {% else %}

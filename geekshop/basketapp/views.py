@@ -1,31 +1,19 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect, HttpResponseNotFound, HttpResponseGone, JsonResponse
+from django.http import HttpResponseRedirect, HttpResponseNotFound, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
 from django.urls import reverse
 
 from basketapp.models import Basket
+from mainapp.context_processors import get_links_menu
 from mainapp.models import Product
-
-
-def get_links():
-    links_ = [{'href': 'index', 'name': 'главная'},
-              {'href': 'mainapp:products', 'name': 'продукты'},
-              {'href': 'contact', 'name': 'контакты'}]
-    return links_
 
 
 @login_required()
 def basket(request):
     title = 'корзина'
     if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
-        context = {
-            'links': list(get_links()),
-            'auth': [{'href': 'auth:edit', 'name': 'пользователь'}],
-            'title': title,
-            'basket': basket,
-        }
+        context = get_links_menu(request=request, title=title)
         return render(request, 'basket.html', context)
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

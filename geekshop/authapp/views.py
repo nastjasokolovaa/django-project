@@ -72,7 +72,11 @@ def edit(request):
         edit_form = ShopUserEditForm(instance=request.user)
         profile_form = ShopUserProfileEditForm(instance=request.user.shopuserprofile)
 
-    content = {'title': title, 'edit_form': edit_form, 'profile_form': profile_form}
+    content = {
+        'title': title,
+        'edit_form': edit_form,
+        'profile_form': profile_form
+    }
 
     return render(request, 'authapp/edit.html', content)
 
