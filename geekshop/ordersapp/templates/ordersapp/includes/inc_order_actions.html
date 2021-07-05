@@ -1,6 +1,6 @@
 <div class="order-btn">
     {% if object.status == 'FM' %}
-            <a class="button-order" href="{% url 'ordersapp:forming_complete' object.pk %}">
+            <a class="button-order" href="{% url 'order:forming_complete' object.pk %}">
                 совершить покупку
             </a>
             <a class="button-order" href="{% url 'ordersapp:delete' object.pk %}">удалить</a>
