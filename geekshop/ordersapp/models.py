@@ -70,6 +70,7 @@ class OrderItem(models.Model):
         Order,
         on_delete=models.CASCADE,
         related_name='orderitems',
+        null=True,
     )
     product = models.ForeignKey(
         Product,
