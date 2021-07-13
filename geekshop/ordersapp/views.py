@@ -142,7 +142,7 @@ def get_product_price(request, pk):
         if product:
             return JsonResponse({'price': product.price})
         else:
-            return JsonResponse({'price': 0})
+            return JsonResponse({'price': 10})
 
 
 # @receiver(pre_save, sender=Basket)

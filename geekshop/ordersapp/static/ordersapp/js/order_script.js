@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     for (let i = 0; i < TOTAL_FORMS; i++) {
         _quantity = parseInt($('input[name="orderitems-' + i + '-quantity"]').val())
-        _price = parseFloat($('.orderitem-' + i + '-price').text().replace(',', '.'))
+        _price = parseFloat($('.orderitems-' + i + '-price').text().replace(',', '.'))
 
         quantity_arr[i] = _quantity
         if (_price) {
@@ -18,15 +18,6 @@ $(document).ready(function () {
             price_arr[i] = 0
         }
     }
-
-    // if (!order_total_quantity) {
-    //     for (let i=0; i < TOTAL_FORMS; i++) {
-    //         order_total_quantity += quantity_arr[i]
-    //         order_total_cost += quantity_arr[i] * price_arr[i]
-    //     }
-    //     $('.order_total_quantity').html(order_total_quantity.toString())
-    //     $('.order_total_cost').html(Number(order_total_cost.toFixed(2)).toString())
-    // }
 
     $('.order_form').on('click', 'input[type="number"]', function () {
         let target = event.target
