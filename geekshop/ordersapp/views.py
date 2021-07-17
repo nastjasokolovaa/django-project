@@ -1,6 +1,4 @@
 from django.db import transaction
-from django.db.models.signals import pre_save, pre_delete
-from django.dispatch import receiver
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404
@@ -9,7 +7,7 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView, D
 from basketapp.models import Basket
 from mainapp.context_processors import get_links, get_auth
 from mainapp.models import Product
-from ordersapp.forms import OrderItemEditForm, OrderEditForm
+from ordersapp.forms import OrderItemEditForm
 from ordersapp.models import Order, OrderItem
 
 
