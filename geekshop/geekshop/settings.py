@@ -197,12 +197,12 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.user.user_details',
 )
 
+SOCIAL_AUTH_VK_OAUTH2_KEY: "7885490"
+SOCIAL_AUTH_VK_OAUTH2_SECRET: "yrrhCisCGs1TQTw0Kgyt"
 
-with open('geekshop/vk.json', 'r') as f:
-    VK = json.load(f)
-SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
-SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_SECRET']
-
-
+# with open('geekshop/vk.json', 'r') as f:
+#     VK = json.load(f)
+# SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
+# SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_SECRET']
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
