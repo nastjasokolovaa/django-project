@@ -28,7 +28,6 @@ def get_auth(request):
 def get_links_menu(request, title, heading=None):
     products = Product.objects.all()[:4]
     categories = ProductCategory.objects.all()
-    basket = Basket.objects.filter(user=request.user)
     links_menu = {
         'links': list(get_links()),
         'auth': list(get_auth(request)),
@@ -37,6 +36,5 @@ def get_links_menu(request, title, heading=None):
         'title': title,
         'products': products,
         'categories': categories,
-        'basket': basket,
     }
     return links_menu
