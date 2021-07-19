@@ -28,5 +28,5 @@ class OrderItemEditForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
             field.help_text = ''
-        # self.fields['product'].queryset = Product.get_items()
-        self.fields['product'].queryset = Product.get_items().select_related()
+        self.fields['product'].queryset = Product.get_items()
+        # self.fields['product'].queryset = Product.get_items().select_related()
