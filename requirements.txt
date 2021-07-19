@@ -1,3 +1,4 @@
+wheel
 asgiref==3.3.4
 certifi==2021.5.30
 cffi==1.14.5
@@ -21,3 +22,6 @@ social-auth-app-django==4.0.0
 social-auth-core==4.1.0
 sqlparse==0.4.1
 urllib3==1.26.5
+django-debug-toolbar
+gjango-debug-toolbar-template-profiler
+
