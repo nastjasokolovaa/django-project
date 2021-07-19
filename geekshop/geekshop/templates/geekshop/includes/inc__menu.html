@@ -3,7 +3,7 @@
     <ul class="menu">
         {% for link in links %}
             <li>
-                <a href="{% url link.href %}"
+                <a href="{% url 'link.href' %}"
                    class="{% if request.resolver_match.url_name == link.href %}
                             active
                           {% endif %}">
@@ -14,7 +14,7 @@
         {% for auth in auth %}
             {% if user.is_authenticated %}
                 <li>
-                    <a href="{% url auth.href %}"
+                    <a href="{% url 'auth.href' %}"
                        class="{% if request.resolver_match.url_name == auth.href %}
                            active
                               {% endif %}">
