@@ -23,5 +23,5 @@ social-auth-core==4.1.0
 sqlparse==0.4.1
 urllib3==1.26.5
 django-debug-toolbar
-gjango-debug-toolbar-template-profiler
-
+django-debug-toolbar-template-profiler
+django-extensions
