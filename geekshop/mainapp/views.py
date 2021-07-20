@@ -22,7 +22,7 @@ def get_same_products(hot_products):
     return same_products
 
 
-@cache_page(3600)
+# @cache_page(3600)
 def products(request, pk=None, page=1):
     title = 'продукты'
     hot_product = get_hot_product()
