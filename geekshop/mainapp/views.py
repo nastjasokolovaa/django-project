@@ -67,10 +67,12 @@ def product(request, pk):
     title = 'Страница продукта'
     pk_product = get_object_or_404(Product, pk=pk)
     same_products = get_same_products(pk_product)
+    category = ProductCategory.objects.filter(is_active=True)
     links_menu = {
         'links': list(get_links()),
         'auth': [{'href': 'auth:edit', 'name': 'пользователь'}],
-        'categories': get_category_menu(),
+        # 'categories': get_category_menu(),
+        'categories': category,
         'title': title,
         'pk_product': pk_product,
         'same_products': same_products,
