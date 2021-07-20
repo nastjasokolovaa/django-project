@@ -1,0 +1,146 @@
+    1  vim .ssh/authorized_keys 
+    2  apt update
+    3  apt install nginx
+    4  apt install postgresql
+    5  apt install postgresql-contrib
+    6  apt install python3-venv
+    7  apt install git
+    8  apt install mc
+    9  mcedit /etc/postgresql/12/main/pg_hba.conf 
+   10  systemctl restart postresql
+   11  mcedit /etc/postgresql/12/main/pg_hba.conf 
+   12  systemctl restart postresql
+   13  systemctl restart postgresql
+   14  systemctl status postgresql
+   15  useradd -g www-data -m django
+   16  cd / home/django/
+   17  cd /home/django/
+   18  git clone git@github.com:nastjasokolovaa/django-project.git
+   19  git clone git@github.com:nastjasokolovaa/django-project1.git
+   20  cd ~/.ssh/
+   21  ls -la
+   22  cat authorized_keys 
+   23  cd ..
+   24  cd /home/django/
+   25  git clone git@github.com:nastjasokolovaa/django-project1.git
+   26  cd ..
+   27  ssh-keygen
+   28  cd /.ssh
+   29  cd .ssh
+   30  ls -la
+   31  cd ~
+   32  ls -la
+   33  cd .ssh
+   34  ls -la
+   35  cat id_rsa.pub 
+   36  cat id_rsa
+   37  cd ..
+   38  cd /home/django/
+   39  git clone git@github.com:nastjasokolovaa/django-project1.git
+   40  ls
+   41  python3 -m venv env
+   42  mc
+   43  cd django-project1/
+   44  python3 -m venv env
+   45  sourse env/bin/activate
+   46  source env/bin/activate
+   47  pip3 install -r requirements.txt
+   48  pip3 install gunicorn
+   49  psql -U postgres
+   50  python3 manage.py migrate
+   51  cd geekshop/
+   52  python3 manage.py migrate
+   53  cd ..
+   54  ls -la
+   55  cd /home/django/django-project1/
+   56  ls -la
+   57  mc
+   58  cd ..
+   59  mc
+   60  git clone git@github.com:nastjasokolovaa/django-project1.git
+   61  cd django-project1/
+   62  ls -la
+   63  python3 -m venv env
+   64  source env/bin/activate
+   65  apt install git
+   66  mcedit /etc/postgresql/12/main/pg_hba.conf 
+   67  python3 manage.py migrate
+   68  systemctl restart postgresql
+   69  systemctl status postgresql
+   70  useradd -g www-data -m django
+   71  pip3 install -r requirements.txt 
+   72  pip3 install wheel
+   73  pip3 install -r requirements.txt 
+   74  pip3 install nginx
+   75  pip3 install gunicorn
+   76  psql -U postgres
+   77  python3 manage.py migrate
+   78  cd /home/django/django-project1/geekshop/geekshop/
+   79  psql -U postgres
+   80  python3 manage.py migrate
+   81  source env/bin/activate
+   82  cd ..
+   83  source env/bin/activate
+   84  cd ..
+   85  source env/bin/activate
+   86  cd geekshop/geekshop/
+   87  python3 manage.py migrate
+   88  mc
+   89  cd ..
+   90  mc
+   91  git clone git@github.com:nastjasokolovaa/django-project1.git
+   92  cd django-project1/
+   93  pip3 install gunicorn
+   94  python3 -m venv env
+   95  pip3 install -r requirements.txt 
+   96  pip3 install -r requirements.txt
+   97  ls -la
+   98  python3 -m pip
+   99  systemctl status postgresql
+  100  cd /home/d
+  101  cd /home/django/
+  102  ls -la
+  103  cd django-project1/
+  104  ls -la
+  105  python3 -m venv env
+  106  ls -la
+  107  source env/bin/activate
+  108  pip3 intall -r requirements.txt
+  109  pip3 install -r requirements.txt
+  110  pip3 install wheel
+  111  pip3 install -r requirements.txt
+  112  pip3 install gunicorn
+  113  cd geekshop/
+  114  python3 manage.py migrate
+  115  pip3 install psycopg2-binary
+  116  python3 manage.py migrat
+  117  python3 manage.py migrate
+  118  python3 manage.py fill_db
+  119  python3 manage.py runserver
+  120  python3 manage.py runserver 0.0.0.0:8000
+  121  cd /home/django/django-project1/
+  122  python3 manage.py migrate
+  123  ls -la
+  124  cd /home/django/django-project1/geekshop/
+  125  python3 manage.py migrate
+  126  cd ..
+  127  mc
+  128  pip3 install nginx
+  129  git clone git@github.com:nastjasokolovaa/django-project1.git
+  130  cd django-project1/
+  131  python3 -m venv env
+  132  source env/bin/activate
+  133  pip3 install requirements.txt 
+  134  pip3 install requirements.txt
+  135  ls -la
+  136  pip3 install -r requirements.txt 
+  137  pip3 install wheel
+  138  pip3 install gunicorn
+  139  cd geekshop/
+  140  python3 manage.py migrate
+  141  ls -la
+  142  cd geekshop/
+  143  ls -la
+  144  python3 manage.py migrate
+  145  cd /home/django/django-project1/geekshop/
+  146  history > /tmp/history.txt

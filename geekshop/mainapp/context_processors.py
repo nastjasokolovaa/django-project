@@ -1,3 +1,6 @@
+from django.conf import settings
+from django.core.cache import cache
+
 from authapp.models import ShopUser
 from basketapp.models import Basket
 from mainapp.models import Product, ProductCategory
@@ -10,6 +13,18 @@ def basket(request):
     return {
         'basket': basket_list
     }
+
+
+def get_category_menu():
+    if settings.LOW_CACHE:
+        key = 'category_menu'
+        category_menu = cache.get(key)
+        if category_menu is None:
+            category_menu = ProductCategory.objects.filter(is_active=True)
+            cache.set(key, category_menu)
+        return category_menu
+    else:
+        return ProductCategory.objects.filter(is_active=True)
 
 
 def get_links():
@@ -27,7 +42,6 @@ def get_auth(request):
 
 def get_links_menu(request, title, heading=None):
     products = Product.objects.all()[:4]
-    categories = ProductCategory.objects.all()
     links_menu = {
         'links': list(get_links()),
         'auth': list(get_auth(request)),
@@ -35,6 +49,6 @@ def get_links_menu(request, title, heading=None):
         'heading': heading,
         'title': title,
         'products': products,
-        'categories': categories,
+        'categories': get_category_menu(),
     }
     return links_menu
