@@ -5,8 +5,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from mainapp.context_processors import get_links, get_links_menu, get_category_menu
 from mainapp.models import ProductCategory, Product
-from django.conf import settings
-from django.core.cache import cache
+from django.views.decorators.cache import cache_page
 
 
 def get_products():
@@ -23,6 +22,7 @@ def get_same_products(hot_products):
     return same_products
 
 
+@cache_page(3600)
 def products(request, pk=None, page=1):
     title = 'продукты'
     hot_product = get_hot_product()
