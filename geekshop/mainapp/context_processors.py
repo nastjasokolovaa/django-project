@@ -15,16 +15,16 @@ def basket(request):
     }
 
 
-# def get_category_menu():
-#     if settings.LOW_CACHE:
-#         key = 'category_menu'
-#         category_menu = cache.get(key)
-#         if category_menu is None:
-#             category_menu = ProductCategory.objects.filter(is_active=True)
-#             cache.set(key, category_menu)
-#         return category_menu
-#     else:
-#         return ProductCategory.objects.filter(is_active=True)
+def get_category_menu():
+    if settings.LOW_CACHE:
+        key = 'category_menu'
+        category_menu = cache.get(key)
+        if category_menu is None:
+            category_menu = ProductCategory.objects.filter(is_active=True)
+            cache.set(key, category_menu)
+        return category_menu
+    else:
+        return ProductCategory.objects.filter(is_active=True)
 
 
 def get_links():
@@ -50,7 +50,7 @@ def get_links_menu(request, title, heading=None):
         'heading': heading,
         'title': title,
         'products': products,
-        # 'categories': get_category_menu(),
-        'categories': category,
+        'categories': get_category_menu(),
+        # 'categories': category,
     }
     return links_menu
